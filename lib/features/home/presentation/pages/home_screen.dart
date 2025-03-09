@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thepilot/core/constants/images.dart';
 import 'package:thepilot/core/constants/svgs.dart';
 import 'package:thepilot/core/widgets/custom_image.dart';
+import 'package:thepilot/features/home/presentation/widgets/announcement_card.dart';
+import 'package:thepilot/features/home/presentation/widgets/homeroom_card.dart';
 import 'package:thepilot/features/home/presentation/widgets/percentage_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -111,71 +112,102 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 16.verticalSpace,
-                Container(
-                  width: 1.sw,
-                  height: 100.h,
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF006FFD),
-                    borderRadius: BorderRadius.circular(8).r,
-                  ),
-                  child: Stack(
+                HomeroomCard(),
+                16.verticalSpace,
+                IntrinsicHeight(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      CustomImage(
-                        Images.dots,
-                        width: 100.sw,
-                        fit: BoxFit.fitWidth,
-                      ),
                       Container(
-                        width: 1.sw,
-                        height: 100.w,
+                        width: 167.w,
+                        height: 271.h,
                         decoration: BoxDecoration(
+                          color: Color(0xFF1A1A1A),
                           borderRadius: BorderRadius.circular(8).r,
-                          gradient: LinearGradient(
-                            begin: FractionalOffset.topLeft,
-                            end: FractionalOffset.bottomRight,
-                            colors: [
-                              Color(0xFF006FFD).withValues(alpha: 0.0),
-                              Color(0xFF006FFD),
-                              Color(0xFF006FFD),
-                              Color(0xFF006FFD),
-                            ],
-                          ),
                         ),
-                      ),
-                      Container(
-                        width: 1.sw,
-                        height: 100.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8).r,
-                          gradient: LinearGradient(
-                            begin: FractionalOffset.topCenter,
-                            end: FractionalOffset.bottomCenter,
-                            colors: [
-                              Color(0xFF006FFD).withValues(alpha: 0.0),
-                              Color(0xFF006FFD).withValues(alpha: 0.0),
-                              Color(0xFF006FFD),
-                              Color(0xFF006FFD),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisSize: MainAxisSize.max,
+                        child: Stack(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12).w,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Homeroom',
+                            CustomImage(
+                              Images.dotsVertical,
+                              width: 167.w,
+                              height: 271.h,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              width: 167.w,
+                              height: 271.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8).r,
+                                gradient: LinearGradient(
+                                  begin: FractionalOffset.topLeft,
+                                  end: FractionalOffset.bottomRight,
+                                  colors: [
+                                    Color(0xFF1A1A1A).withValues(alpha: 0.0),
+                                    Color(0xFF1A1A1A),
+                                    Color(0xFF1A1A1A),
+                                    Color(0xFF1A1A1A),
+                                    Color(0xFF1A1A1A),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 167.w,
+                              height: 271.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8).r,
+                                gradient: LinearGradient(
+                                  begin: FractionalOffset.topCenter,
+                                  end: FractionalOffset.bottomCenter,
+                                  colors: [
+                                    Color(0xFF1A1A1A).withValues(alpha: 0.0),
+                                    Color(0xFF1A1A1A).withValues(alpha: 0.0),
+                                    Color(0xFF1A1A1A),
+                                    Color(0xFF1A1A1A),
+                                    Color(0xFF1A1A1A),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(left: 10.0).w,
+                                  width: 56.w,
+                                  height: 56.h,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFFFFF),
+                                    borderRadius: BorderRadius.circular(100).r,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 10.2.r,
+                                        blurStyle: BlurStyle.normal,
+                                        color: Color(
+                                          0xFF000000,
+                                        ).withValues(alpha: 0.25),
+                                        offset: Offset(0, 4),
+                                        spreadRadius: 0,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: CustomImage(
+                                      Images.folder,
+                                      width: 32.w,
+                                      height: 32.h,
+                                    ),
+                                  ),
+                                ),
+                                8.verticalSpace,
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 12).w,
+                                  child: Text(
+                                    'Assigned Classes',
                                     style: GoogleFonts.inter(
                                       color: Color(0xFFFFFFFF),
                                       fontSize: 12.sp,
@@ -184,7 +216,10 @@ class HomeScreen extends StatelessWidget {
                                       height: 1.sp,
                                     ),
                                   ),
-                                  Text(
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 12).w,
+                                  child: Text(
                                     'Your classroom awaits you',
                                     style: GoogleFonts.inter(
                                       color: Color(
@@ -196,13 +231,21 @@ class HomeScreen extends StatelessWidget {
                                       height: 1.sp,
                                     ),
                                   ),
-                                  16.verticalSpace,
-                                ],
-                              ),
+                                ),
+                                16.verticalSpace,
+                              ],
                             ),
-                            CustomImage(Images.workspace, width: 93.w),
                           ],
                         ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          AnnouncementCard(title: 'Announcements'),
+                          AnnouncementCard(title: 'Notes & Storage'),
+                        ],
                       ),
                     ],
                   ),
