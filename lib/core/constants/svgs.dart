@@ -6,5 +6,7 @@ class Svgs {
   static const String messageChat = '$_baseUrl/message-chat.svg';
   static const String avatar = '$_baseUrl/avatar.svg';
   static const String arrowUpRounded = '$_baseUrl/arrow-up-rounded.svg';
-  static const String workspace = '$_baseUrl/workspace.svg';
+  static const String menu = '$_baseUrl/menu.svg';
+    static const String chevronDown = '$_baseUrl/chevron-down.svg';
+
 }
