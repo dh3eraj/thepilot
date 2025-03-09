@@ -1,11 +1,12 @@
 import 'package:go_router/go_router.dart';
+import 'package:thepilot/features/dashboard/presentation/pages/dashboard_screen.dart';
 import 'package:thepilot/features/home/presentation/pages/home_screen.dart';
 import 'package:thepilot/features/home/presentation/pages/student_stats_screen.dart';
 import 'package:thepilot/features/login/presentation/pages/login_screen.dart';
 
 class AppRoutes {
   static GoRouter routerConfig = GoRouter(
-    initialLocation: '/student-stats',
+    initialLocation: '/dashboard',
     routes: [
       GoRoute(
         path: '/login',
@@ -23,6 +24,12 @@ class AppRoutes {
         path: '/student-stats',
         builder: (context, state) {
           return StudentStatsScreen();
+        },
+      ),
+           GoRoute(
+        path: '/dashboard',
+        builder: (context, state) {
+          return DashboardScreen();
         },
       ),
     ],

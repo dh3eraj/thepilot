@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thepilot/config/theme/text_themes.dart';
 import 'package:thepilot/core/constants/svgs.dart';
@@ -79,12 +78,7 @@ class LoginScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     24.verticalSpace,
-                    ActionButton(
-                      'Login',
-                      onTap: () {
-                        context.go('/home');
-                      },
-                    ),
+                    ActionButton('Login'),
                     16.verticalSpace,
                     Center(
                       child: RichText(
