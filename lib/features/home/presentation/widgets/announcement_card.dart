@@ -6,13 +6,20 @@ import 'package:thepilot/core/widgets/custom_image.dart';
 
 class AnnouncementCard extends StatelessWidget {
   final String title;
-  const AnnouncementCard({super.key, required this.title});
+  final double width;
+  final double height;
+  const AnnouncementCard({
+    super.key,
+    required this.title,
+    required this.width,
+    required this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 167.w,
-      height: 124.h,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: Color(0xFF006FFD),
         borderRadius: BorderRadius.circular(8).r,

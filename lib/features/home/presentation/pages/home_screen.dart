@@ -243,8 +243,16 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          AnnouncementCard(title: 'Announcements'),
-                          AnnouncementCard(title: 'Notes & Storage'),
+                          AnnouncementCard(
+                            title: 'Announcements',
+                            width: 167.w,
+                            height: 124.h,
+                          ),
+                          AnnouncementCard(
+                            title: 'Notes & Storage',
+                            width: 167.w,
+                            height: 132.h,
+                          ),
                         ],
                       ),
                     ],

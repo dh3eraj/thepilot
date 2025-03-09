@@ -102,11 +102,23 @@ class StudentStatsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     16.horizontalSpace,
-                    AnnouncementCard(title: 'Announcements'),
+                    AnnouncementCard(
+                      title: 'Announcements',
+                      width: 167.w,
+                      height: 124.h,
+                    ),
                     8.horizontalSpace,
-                    AnnouncementCard(title: 'Announcements'),
+                    AnnouncementCard(
+                      title: 'Announcements',
+                      width: 167.w,
+                      height: 124.h,
+                    ),
                     8.horizontalSpace,
-                    AnnouncementCard(title: 'Announcements'),
+                    AnnouncementCard(
+                      title: 'Announcements',
+                      width: 167.w,
+                      height: 124.h,
+                    ),
                     16.horizontalSpace,
                   ],
                 ),

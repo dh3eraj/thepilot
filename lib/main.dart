@@ -15,6 +15,7 @@ class MainApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(375, 812),
       child: MaterialApp.router(
+        title: 'The Pilot',
         debugShowCheckedModeBanner: false,
         routerConfig: AppRoutes.routerConfig,
       ),
