@@ -11,7 +11,8 @@ class PercentageCard extends StatelessWidget {
   const PercentageCard({
     super.key,
     required this.increment,
-    required this.total, required this.unit,
+    required this.total,
+    required this.unit,
   });
 
   @override
@@ -41,42 +42,33 @@ class PercentageCard extends StatelessWidget {
             ),
           ),
           7.verticalSpace,
-          RichText(
-            text: TextSpan(
-              children: [
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.middle,
-                  child: CustomImage.svg(
-                    Svgs.arrowUpRounded,
-                    width: 8.w,
-                    height: 8.w,
-                  ),
+          Row(
+            children: [
+              CustomImage.svg(Svgs.arrowUpRounded, width: 8.w, height: 8.w),
+              2.horizontalSpace,
+              Text(
+                '$increment%',
+                style: GoogleFonts.inter(
+                  color: Color(0xFF1A1A1A),
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 0.5.r,
+                  height: 1.r,
                 ),
-                WidgetSpan(child: 2.horizontalSpace),
-                TextSpan(
-                  text: '$increment%',
-                  style: GoogleFonts.inter(
-                    color: Color(0xFF1A1A1A),
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic,
-                    letterSpacing: 0.5.r,
-                    height: 1.r,
-                  ),
+              ),
+              2.horizontalSpace,
+              Text(
+                'From Last Month',
+                style: GoogleFonts.inter(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 0.5.sp,
+                  height: 1.sp,
                 ),
-                WidgetSpan(child: 2.horizontalSpace),
-                TextSpan(
-                  text: 'From Last Month',
-                  style: GoogleFonts.inter(
-                    color: Color(0xFFFFFFFF),
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 0.5.sp,
-                    height: 1.sp,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Spacer(),
           RichText(

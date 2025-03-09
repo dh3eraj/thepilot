@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                AppBar().preferredSize.height.verticalSpace,
+                MediaQuery.of(context).viewPadding.top.verticalSpace,
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 12).r,
                   child: Row(

@@ -21,7 +21,7 @@ class StudentStatsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              AppBar().preferredSize.height.verticalSpace,
+              MediaQuery.of(context).viewPadding.top.verticalSpace,
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16).r,
                 child: Row(
